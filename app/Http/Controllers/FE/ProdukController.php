@@ -13,10 +13,17 @@ class ProdukController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // $produks = DB::table('produks');
-        return view('FE.produk');
+        // return view('FE.produk');
+
+        $produks = DB::table('produks')->get();
+        $data = array(
+            'produks' => $produks,
+        );
+
+        return view('FE.produk', $data)->with('no', ($request->input('page') - 1) * 2);
     }
 
     /**

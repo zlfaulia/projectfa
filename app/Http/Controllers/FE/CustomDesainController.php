@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FE;
 
 use App\Http\Controllers\Controller;
+use App\Models\customDesain;
 use Illuminate\Http\Request;
 
 class CustomDesainController extends Controller
@@ -14,7 +15,7 @@ class CustomDesainController extends Controller
      */
     public function index()
     {
-        return view('FE.custom_desain');
+        return view('FE/customDesain');
     }
 
     /**
@@ -24,7 +25,7 @@ class CustomDesainController extends Controller
      */
     public function create()
     {
-        //
+        return view('FE/customDesain');
     }
 
     /**
@@ -35,7 +36,23 @@ class CustomDesainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'kategori' => 'required',
+            'bahan' => 'required',
+            'desain' => 'required',
+            'pesan' => 'required'
+        ]);
+
+        // $image = $request->file('dokumentasi')->getClientOriginalName();
+        // $request->file('dokumentasi')->move('public/dokumentasi', $image);
+
+        customDesain::create([
+            'kategori' =>$request->get('kategori'),
+            'bahan' =>$request->get('bahan'),
+            'desain' =>$request->get('desain'),
+            'pesan' =>$request->get('pesan'),
+        ]);
+        return redirect('/FE/customDesain')->with('success', 'Dokumentasi berhasil ditambahkan');
     }
 
     /**

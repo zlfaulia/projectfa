@@ -11,7 +11,7 @@
         </div>
     @endif
     <div class="float-right my-2">
-      <a class="btn btn-success" href="{{ url('/admin/pesanan/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Pesanan Baru</a>
+      <a class="btn btn-secondary" href="{{ url('/admin/pesanan/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Pesanan Baru</a>
     </div>
     <table class="table table-striped">
       <thead>
@@ -35,11 +35,10 @@
           <tr>
             <th scope="row"></th>
             <td>{{ $loop->iteration }}</td>
-            <td>{{$pesanan->nama_konsumen}}</td>
-            <td>{{$pesanan->alamat_pengiriman}}</td>
-            <td>{{$pesanan->nama_produk}}</td>
-            <td>{{$pesanan->ukuran}}</td>
-            <td>{{$pesanan->variasi}}</td>
+            <td>{{$pesanan->user->nama}}</td>
+            <td>{{$pesanan->user->alamat}}</td>
+            <td>{{$pesanan->produk->nama_produk}}</td>
+            <td>{{$pesanan->stok->ukuran.'-'.$pesanan->stok->variasi}}</td>
             <td>{{$pesanan->jumlah}}</td>
             <td>{{$pesanan->total_bayar}}</td>
             <td>{{$pesanan->tanggal_pesan}}</td>

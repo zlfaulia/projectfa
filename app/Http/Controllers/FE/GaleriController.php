@@ -4,6 +4,8 @@ namespace App\Http\Controllers\FE;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\galeri;
+use Illuminate\Support\Facades\DB;
 
 class GaleriController extends Controller
 {
@@ -12,9 +14,15 @@ class GaleriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('FE.galeri');
+        // return view('FE.galeri');
+        $galeris = DB::table('galeris')->get();
+        $data = array(
+            'galeris' => $galeris,
+        );
+
+        return view('FE.galeri', $data)->with('no', ($request->input('page') - 1) * 2);
     }
 
     /**

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Dashboard</title>
+    <title>Dashboard</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--===============================================================================================-->
@@ -43,27 +43,10 @@
   <header>
     <!-- Header desktop -->
     <div class="container-menu-desktop">
-      <!-- Topbar -->
-      <!-- <div class="top-bar">
-          <div class="content-topbar flex-sb-m h-full container">
-            <div class="left-top-bar">Free shipping for standard order over $100</div>
-
-            <div class="right-top-bar flex-w h-full">
-              <a href="#" class="flex-c-m trans-04 p-lr-25"> Help & FAQs </a>
-
-              <a href="#" class="flex-c-m trans-04 p-lr-25"> My Account </a>
-
-              <a href="#" class="flex-c-m trans-04 p-lr-25"> EN </a>
-
-              <a href="#" class="flex-c-m trans-04 p-lr-25"> USD </a>
-            </div>
-          </div>
-        </div> -->
-
       <div class="wrap-menu-desktop">
         <nav class="limiter-menu-desktop container">
           <!-- Logo desktop -->
-          <a href="#" class="logo">
+          <a class="logo">
             <img src="{{ asset('FE/images/icons/logoo.jpg') }}" alt="IMG-LOGO" />
             <h5>Nelba Konveksi</h5>
           </a>
@@ -71,29 +54,27 @@
           <!-- Menu desktop -->
           <div class="menu-desktop">
             <ul class="main-menu">
-              <li class="active-menu">
-                <a href="{{ route('dashboard') }}">Dashboard</a>
+                <li>
+                    <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+                </li>
+                <li>
+                    <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}" href="{{ route('galeri') }}">{{ ('Galeri') }}</a>
+                </li>
+
+              <li>
+                <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}" href="{{ route('produk') }}">Produk</a>
               </li>
 
               <li>
-                <a href="{{ route('galeri') }}">Galeri</a>
-              </li>
-
-              <!-- <li class="label1" data-label1="hot"> -->
-              <li>
-                <a href="{{ route('produk') }}">Produk</a>
+                <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}" href="{{ route('customDesain') }}">Custom Desain</a>
               </li>
 
               <li>
-                <a href="{{ route('custom-desain') }}">Custom Desain</a>
+                <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}" href="{{ route('keranjang') }}">Keranjang</a>
               </li>
 
               <li>
-                <a href="{{ route('keranjang') }}">Keranjang</a>
-              </li>
-
-              <li>
-                <a href="{{ route('pembayaran') }}">Pembayaran</a>
+                <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}" href="{{ route('pembayaran') }}">Pembayaran</a>
               </li>
             </ul>
           </div>
@@ -104,10 +85,10 @@
               <a href="{{ route('login') }}"><i class="zmdi zmdi-account-circle"></i></a>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+            {{-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
               data-notify="2">
               <i class="zmdi zmdi-shopping-cart"></i>
-            </div>
+            </div> --}}
           </div>
         </nav>
       </div>
@@ -123,7 +104,7 @@
       </div>
 
       <!-- Icon header -->
-      <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+      {{-- <div class="wrap-icon-header flex-w flex-r-m m-r-15">
         <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-account">
           <i class="zmdi zmdi-search"></i>
         </div>
@@ -132,10 +113,10 @@
           <i class="zmdi zmdi-shopping -cart"></i>
         </div>
 
-        <!-- <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+        <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
             <i class="zmdi zmdi-favorite-outline"></i>
-          </a> -->
-      </div>
+          </a>
+      </div> --}}
 
       <!-- Button show menu -->
       <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -149,53 +130,34 @@
     <div class="menu-mobile">
       <ul class="main-menu-m">
         <li>
-          <a href="index.html">Dashboard</a>
-          <!-- <span class="arrow-main-menu-m">
-              <i class="fa fa-angle-right" aria-hidden="true"></i>
-            </span> -->
+            <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+        </li>
+        <li>
+            <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}" href="{{ route('galeri') }}">{{ ('Galeri') }}</a>
         </li>
 
         <li>
-          <a href="galeri.html">Galeri</a>
-        </li>
+            <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}" href="{{ route('produk') }}">Produk</a>
+          </li>
 
-        <li>
-          <a href="product.html">Produk</a>
-        </li>
+          <li>
+            <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}" href="{{ route('customDesain') }}">Custom Desain</a>
+          </li>
 
-        <li>
-          <a href="custom-desain.html">Custom Desain</a>
-        </li>
+          <li>
+            <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}" href="{{ route('keranjang') }}">Keranjang</a>
+          </li>
 
-        <li>
-          <a href="keranjang.html">Keranjang</a>
-        </li>
-
-        <li>
-          <a href="pembayaran.html">Pembayaran</a>
-        </li>
+          <li>
+            <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}" href="{{ route('pembayaran') }}">Pembayaran</a>
+          </li>
       </ul>
     </div>
 
-    <!-- Modal Search -->
-    <div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-      <div class="container-search-header">
-        <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-          <img src="{{ asset('FE/images/icons/icon-close2.png') }}" alt="CLOSE" />
-        </button>
-
-        <form class="wrap-search-header flex-w p-l-15">
-          <button class="flex-c-m trans-04">
-            <i class="zmdi zmdi-search"></i>
-          </button>
-          <input class="plh3" type="text" name="search" placeholder="Search..." />
-        </form>
-      </div>
-    </div>
   </header>
 
   <!-- Cart -->
-  <div class="wrap-header-cart js-panel-cart">
+  {{-- <div class="wrap-header-cart js-panel-cart">
     <div class="s-full js-hide-cart"></div>
 
     <div class="header-cart flex-col-l p-l-65 p-r-25">
@@ -259,72 +221,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!-- Slider -->
-  <section class="section-slide">
-    <div class="wrap-slick1">
-      <div class="slick1">
-        <div class="item-slick1" style="background-image: url(FE/images/slide1.png)">
-          {{-- <img src="{{ asset('') }}" alt=""> --}}
-          <div class="container h-full">
-            <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-              <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-                <span class="ltext-101 cl2 respon2"> Selamat Datang </span>
-              </div>
 
-              <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">Nelba Konveksi</h2>
-              </div>
-
-              <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"> Shop
-                  Now </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-slick1" style="background-image: url(FE/images/slide1.png)">
-          <div class="container h-full">
-            <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-              <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
-                <span class="ltext-101 cl2 respon2"> Menerima Pesanan Grosir </span>
-              </div>
-
-              <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
-                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">Jackets & Coats</h2>
-              </div>
-
-              <div class="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay="1600">
-                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"> Shop
-                  Now </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="item-slick1" style="background-image: url(FE/images/slide1.png)">
-          <div class="container h-full">
-            <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-              <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
-                <span class="ltext-101 cl2 respon2"> Men Collection 2018 </span>
-              </div>
-
-              <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
-                <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">New arrivals</h2>
-              </div>
-
-              <div class="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay="1600">
-                <a href="product.html" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04"> Shop
-                  Now </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   {{-- content --}}
   @yield('content')
@@ -341,19 +241,19 @@
 
           <ul>
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Women </a>
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kaos Polos </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Men </a>
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kemeja Batik </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Shoes </a>
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Pakaian Dinas Harian(PDH) </a>
             </li>
 
             <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Watches </a>
+              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Baju Pabrik </a>
             </li>
           </ul>
         </div>
@@ -419,7 +319,7 @@
       </div>
 
       <div class="p-t-40">
-        <div class="flex-c-m flex-w p-b-18">
+        {{-- <div class="flex-c-m flex-w p-b-18">
           <a href="#" class="m-all-1">
             <img src="{{ asset(" FE/") }}{{ asset('') }}images/icons/icon-pay-01.png" alt="ICON-PAY" />
           </a>
@@ -439,7 +339,7 @@
           <a href="#" class="m-all-1">
             <img src="{{ asset(" FE/") }}{{ asset('') }}images/icons/icon-pay-05.png" alt="ICON-PAY" />
           </a>
-        </div>
+        </div> --}}
 
         <p class="stext-107 cl6 txt-center">
           <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -464,13 +364,13 @@
   </div>
 
   <!-- Modal1 -->
-  <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+  {{-- <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
     <div class="overlay-modal1 js-hide-modal1"></div>
 
     <div class="container">
       <div class="bg0 p-t-60 p-b-30 p-lr-15-lg how-pos3-parent">
         <button class="how-pos3 hov3 trans-04 js-hide-modal1">
-          <img src="{{ asset('') }}images/icons/icon-close.png" alt="CLOSE" />
+          <img src="{{ asset('FE/images/icons/icon-close.png')}}" alt="CLOSE" />
         </button>
 
         <div class="row">
@@ -483,7 +383,7 @@
                 <div class="slick3 gallery-lb">
                   <div class="item-slick3" data-thumb="{{ asset('') }}images/product-detail-01.jpg">
                     <div class="wrap-pic-w pos-relative">
-                      <img src="{{ asset('') }}images/product-detail-01.jpg" alt="IMG-PRODUCT" />
+                      <img src="{{ asset('')  }}images/product-detail-01.jpg" alt="IMG-PRODUCT" />
 
                       <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
                         href="{{ asset('') }}images/product-detail-01.jpg">
@@ -613,7 +513,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
 
   <!--===============================================================================================-->
   <script src="{{ asset('FE/vendor/jquery/jquery-3.2.1.min.js') }}"></script>

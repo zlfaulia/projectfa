@@ -39,11 +39,9 @@ class pesananController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_konsumen' => 'required',
-            'alamat_pengiriman' => 'required',
-            'nama_produk' => 'required',
-            'ukuran' => 'required',
-            'variasi' => 'required',
+            'user_id' => 'required',
+            'produk_id' => 'required',
+            'stok_id' => 'required',
             'jumlah' => 'required',
             'total_bayar' => 'required',
             'tanggal_pesan' => 'required',
@@ -54,11 +52,9 @@ class pesananController extends Controller
 
         // $pesanan=pesanan::create([
         pesanan::create([
-            'nama_konsumen' => $request->get('nama_konsumen'),
-            'alamat_pengiriman' => $request->get('alamat_pengiriman'),
-            'nama_produk' => $request->get('nama_produk'),
-            'ukuran' => $request->get('ukuran'),
-            'variasi' => $request->get('variasi'),
+            'user_id' => $request->get('user_id'),
+            'produk_id' => $request->get('produk_id'),
+            'stok_id' => $request->get('stok_id'),
             'jumlah' => $request->get('jumlah'),
             'total_bayar' => $request->get('total_bayar'),
             'tanggal_pesan' => $request->get('tanggal_pesan'),
@@ -106,11 +102,9 @@ class pesananController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nama_konsumen' => 'required',
-            'alamat_pengiriman' => 'required',
-            'nama_produk' => 'required',
-            'ukuran' => 'required',
-            'variasi' => 'required',
+            'user_id' => 'required',
+            'produk_id' => 'required',
+            'stok_id' => 'required',
             'jumlah' => 'required',
             'total_bayar' => 'required',
             'tanggal_pesan' => 'required',
@@ -119,17 +113,8 @@ class pesananController extends Controller
 
         ]);
 
-        // $pesanan->nama_konsumen = $request->nama_konsumen;
-        // $pesanan->alamat_pengiriman = $request->alamat_pengiriman;
-        // $pesanan->nama_produk= $request->nama_produk;
-        // $pesanan->ukuran = $request->ukuran;
-        // $pesanan->variasi= $request->variasi;
-        // $pesanan->jumlah= $request->jumlah;
-        // $pesanan->total_bayar = $request->total_bayar;
-        // $pesanan->tanggal_pesan = $request->tanggal_pesan;
-        // $pesanan->catatan_pesanan= $request->catatan_pesanan;
-        // $pesanan->opsi_pengiriman= $request->opsi_pengiriman;
-        // $pesanan->save();
+        $itemuser = $request->user();//ambil data user yang login
+        $inputan = $request->all();
 
         return redirect('/admin/pesanan')->with('success', 'Pesanan berhasil diupdate');
     }

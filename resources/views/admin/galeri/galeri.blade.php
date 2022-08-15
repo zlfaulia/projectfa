@@ -11,15 +11,17 @@
         </div>
     @endif
     <div class="float-right my-2">
-      <a class="btn btn-success" href="{{ url('/admin/galeri/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Dokumentasi Baru</a>
+      <a class="btn btn-secondary" href="{{ url('/admin/galeri/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Dokumentasi Baru</a>
     </div>
     <table class="table table-striped">
       <thead>
         <tr>
             <th></th>
             <th>No</th>
+            <th>Nama</th>
             <th>Dokumentasi</th>
             <th>Keterangan</th>
+            <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +29,7 @@
           <tr>
             <th scope="row"></th>
             <td>{{ $loop->iteration }}</td>
+            <td>{{$galeri->name}}</td>
             <td><img src="{{asset('public/dokumentasi/'.$galeri->dokumentasi) }}" style="width: 60px;"></td>
             {{-- <td>{{$galeri->dokumentasi}}</td> --}}
             <td>{{$galeri->keterangan}}</td>

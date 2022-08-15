@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\FE;
 
 use App\Models\produk;
+use app\Models\galeri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -16,10 +17,15 @@ class DashboardController extends Controller
      */
     public function index(Request $request)
     {
-        
-        // $produks = DB::table('produks')->get();
-        $produks = DB::table('produks')->get();
-        return view('FE.dashboard', compact('produks'));
+
+        $produks = Produk::orderBy('nama_produk', 'asc')->limit(10)->paginate(2);
+        $galeris = DB::table('galeris')->limit(4)->get();
+
+        $data = array(
+            'produks' => $produks,
+            'galeris' => $galeris,
+        );
+        return view('FE.dashboard', $data)->with('no', ($request->input('page') - 1) * 2);
     }
     /**
      * Show the form for creating a new resource.

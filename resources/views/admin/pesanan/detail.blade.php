@@ -11,11 +11,10 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     @foreach ($pesanan as $item)
-                    <li class="list-group-item"><b>Nama Konsumen: </b>{{$item->nama_konsumen}}</li>
-                    <li class="list-group-item"><b>Alamat Pengiriman: </b>{{$item->alamat_pengiriman}}</li>
-                    <li class="list-group-item"><b>Nama Produk: </b>{{$item->nama_produk}}</li>
-                    <li class="list-group-item"><b>Ukuran: </b>{{$item->ukuran}}</li>
-                    <li class="list-group-item"><b>Variasi: </b>{{$item->variasi}}</li>
+                    <li class="list-group-item"><b>Nama Konsumen: </b>{{$item->user->nama}}</li>
+                    <li class="list-group-item"><b>Alamat Pengiriman: </b>{{$item->user->alamat}}</li>
+                    <li class="list-group-item"><b>Nama Produk: </b>{{$item->produk->nama_produk}}</li>
+                    <li class="list-group-item"><b>Ukuran: </b>{{$item->stok->ukuran.'-'.$item->stok->variasi}}</li>
                     <li class="list-group-item"><b>Jumlah: </b>{{$item->jumlah}}</li>
                     <li class="list-group-item"><b>Total Bayar: </b>{{$item->total_bayar}}</li>
                     <li class="list-group-item"><b>Tanggal Pesan: </b>{{$item->tanggal_pesan}}</li>

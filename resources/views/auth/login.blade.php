@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | LOGIN</title>
+  <title>Nelba Konveksi| LOGIN</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,18 +13,21 @@
   <link rel="stylesheet" href="{{asset('template/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('template/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('FE/css/util.css') }}" />
+  <link rel="stylesheet" href="{{ asset('FE/css/main.css') }}" />
+
 </head>
-<body class="hold-transition login-page">
+<body class="login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><img src="https://i.ibb.co/ZhNc6LG/logo-nelba.jpg" alt="" width="60" height="60"><b>Nelba Konveksi</b>
+    <a href="../../index2.html"><img src="https://i.ibb.co/cXrYVTD/logooo.png">
     </a>
 
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+    <div class="login-card-body">
+      <p class="login-box-msg">LOGIN</p>
 
       <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -69,7 +72,7 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="button-submit col-4">
             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
@@ -91,7 +94,7 @@
         <a href="forgot-password.html">I forgot my password</a>
       </p> --}}
       <p class="mb-0">
-        <a href="{{ route('register') }}" class="text-center">Register a new account</a>
+        <a href="{{ route('register') }}" class="regist">Register a new account</a>
       </p>
     </div>
     <!-- /.login-card-body -->

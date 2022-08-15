@@ -25,14 +25,17 @@
             @method('PUT')
             @csrf
 
-            <img src="{{asset('public/dokumentasi/'.$item->dokumentasi) }}" style="width:100px; height:100px;">
             <div class="form-group">
-                <label for="name">Dokumentasi</label>
-                <input type="file" name="dokumentasi" class="form-control" id="name" value="{{ $item->dokumentasi }}">
+                <label>Nama</label>
+                <input type="text" name="name" class="form-control" value="{{ $item->name }}">
             </div>
             <div class="form-group">
-                <label for="email">Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" id="email" value="{{ $item->keterangan }}">
+                <label>Dokumentasi</label>
+                <input type="file" name="dokumentasi" class="form-control" value="{{ $item->dokumentasi }}">
+            </div>
+            <div class="form-group">
+                <label>Keterangan</label>
+                <input type="text" name="keterangan" class="form-control" value="{{ $item->keterangan }}">
             </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

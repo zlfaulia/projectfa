@@ -27,7 +27,21 @@ class produkController extends Controller
      */
     public function create()
     {
-        return view('admin/produk.create');
+        $produk = produk::all();
+        $pr = DB::table('produks')->select(DB::raw('MAX(RIGHT(kode_produk,3)) as kode'));
+        $kode="";
+        if ($pr->count()>0)
+        {
+            foreach($pr->get() as $p)
+            {
+                $tmp = ((int)$p->kode)+1;
+                $kode = sprintf("%03s", $tmp);
+            }
+        }else{
+            $kode = "001";
+        }
+        // return "P-".$kode;
+        return view('admin/produk.create', compact('produk', 'kode'));
     }
 
     /**
@@ -39,29 +53,39 @@ class produkController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'kode_produk' => 'required',
             'gambar_produk' => 'required',
             'nama_produk' => 'required',
-            'harga_produk' => 'required',
-            'stok_produk' => 'required',
             'deskripsi_produk' => 'required'
         ]);
 
         $image = $request->file('gambar_produk')->getClientOriginalName();
         $request->file('gambar_produk')->move('public/gambar_produk', $image);
 
-        produk::create([
-            'gambar_produk' => $image,
-            'nama_produk' => $request->get('nama_produk'),
-            'harga_produk' => $request->get('harga_produk'),
-            'stok_produk' => $request->get('stok_produk'),
-            'deskripsi_produk' => $request->get('deskripsi_produk'),
+        $itemuser = $request->user();//ambil data user yang login
+        $inputan = $request->all();
+        $inputan['user_id'] = $itemuser->id;
 
-        ]);
-
-        // produk::create($request->all());
+        $inputan['kode_produk'] = $request->get('kode_produk');
+        $inputan['gambar_produk'] = $image;
+        $inputan['nama_produk'] = $request->get('nama_produk');
+        $inputan['deskripsi_produk'] = $request->get('deskripsi_produk');
+        $itemproduk = produk::create($inputan);
 
         return redirect('/admin/produk')->with('success', 'Produk berhasil ditambahkan');
     }
+        // $itemuser = $request->user();//ambil data user yang login
+        // $inputan = $request->all();
+        // // $kode_produk = produk::get()->count();
+        // // $kode_produk = produk::where('user_id', $itemuser->id)->count();
+        // $inputan['user_id'] = $itemuser->id;
+        // // untuk kode abjad awal adalah P selalu bertambah 1
+        // // $inputan['kode_produk'] = 'P'.str_pad(($kode_produk + 1),'3', '0', STR_PAD_LEFT);
+        // $inputan['gambar_produk'] = $image;
+        // $inputan['nama_produk'] = $request->get('nama_produk');
+        // $inputan['deskripsi_produk'] = $request->get('deskripsi_produk');
+        // $itemproduk = produk::create($inputan);
+        // return redirect('/admin/produk')->with('success', 'Produk berhasil ditambahkan');
 
     /**
      * Display the specified resource.
@@ -69,9 +93,9 @@ class produkController extends Controller
      * @param  app\Models\produk $produk
      * @return \Illuminate\Http\Response
      */
-    public function show(produk $produk)
+    public function show($id)
     {
-        $produk = produk::find($produk);
+        $produk = Produk::findOrFail($id);
         return view('admin/produk.detail', compact('produk'));
     }
 
@@ -97,10 +121,9 @@ class produkController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'kode_produk' => 'required',
             'gambar_produk' => 'required',
             'nama_produk' => 'required',
-            'harga_produk' => 'required',
-            'stok_produk' => 'required',
             'deskripsi_produk' => 'required'
         ]);
 
@@ -117,27 +140,6 @@ class produkController extends Controller
          return redirect('/admin/produk')
          ->with('success', 'Produk berhasil diupdate');
 
-        // $request->validate([
-        //     'gambar_produk' => 'required',
-        //     'nama_produk' => 'required',
-        //     'harga_produk' => 'required',
-        //     'stok_produk' => 'required',
-        //     'deskripsi_produk' => 'required'
-        // ]);
-
-        // $produk = Produk::findOrFail($id);
-        // $image = $request->file('gambar_produk')->getClientOriginalName();
-        // $request->file('gambar_produk')->move('public/gambar_produk', $image);
-        // $data = [
-        //     'gambar_produk' => $image,
-        //     'nama_produk' => $request->get('nama_produk'),
-        //     'harga_produk' => $request->get('harga_produk'),
-        //     'stok_produk' => $request->get('stok_produk'),
-        //     'deskripsi_produk' => $request->get('deskripsi_produk'),
-        // ]
-
-        //  produk::update($data);
-        // $datas->sa
     }
 
     /**

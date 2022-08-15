@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\FE;
 
 use App\Http\Controllers\Controller;
+use App\Models\produk;
+use App\Models\stok;
 use Illuminate\Http\Request;
 
 class KeranjangController extends Controller
@@ -14,8 +16,16 @@ class KeranjangController extends Controller
      */
     public function index()
     {
-        return view('FE.keranjang');
+        $produk =produk::all();
+        $gambar_produk=produk::get()->groupBy('gambar_produk');
+        $stok=stok::all();
+        return view('FE/keranjang', compact('produk', 'stok', 'gambar_produk'));
     }
+
+    // public function keranjang(Request $request)
+    // {
+    //     dd('sudah masuk');
+    // }
 
     /**
      * Show the form for creating a new resource.

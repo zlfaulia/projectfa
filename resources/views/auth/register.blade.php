@@ -14,17 +14,20 @@
   <link rel="stylesheet" href="{{asset('template/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('template/dist/css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('FE/css/util.css') }}" />
+  <link rel="stylesheet" href="{{ asset('FE/css/main.css') }}" />
 
 </head>
-<body class="hold-transition register-page">
+<body class="register-page" style="background-color: rgb(35, 108, 192)">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../../index2.html"><b>Admin</b>LTE</a>
+    <a href="#"><img src="https://i.ibb.co/12P9pbJ/logore.png" style="padding-left: 100px">
+    </a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">REGISTER</p>
 
       <form method="POST" action="{{ route('register') }}">
         @csrf
@@ -83,6 +86,15 @@
             </div>
           </div>
         </div>
+        <div class="input-group mb-3">
+            {{-- <input type="email" class="form-control" placeholder="Email"> --}}
+            <input id="no_telepon" type="no_telepon"  placeholder="no_telepon" class="form-control @error('no_telepon') is-invalid @enderror" name="no_telepon" value="{{ old('no_telepon') }}" required autocomplete="no_telepon">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

@@ -40,6 +40,7 @@ class galeriController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'name' => 'required',
             'dokumentasi' => 'required',
             'keterangan' => 'required'
         ]);
@@ -48,24 +49,11 @@ class galeriController extends Controller
         $request->file('dokumentasi')->move('public/dokumentasi', $image);
 
         galeri::create([
+            'name'  =>$request->get('name'),
             'dokumentasi' =>$image,
             'keterangan'  =>$request->get('keterangan'),
         ]);
         return redirect('/admin/galeri')->with('success', 'Dokumentasi berhasil ditambahkan');
-        // $galeris =$request->all();
-
-        // if ($request->file('dokumentasi')) {
-        //     $galeri['dokumentasi'] = $request->file('dokumentasi')->store('assets/imgDokumentasi', 'public');
-        // }
-        // $new_image = $image ->getClientOriginalExtension();
-
-        // $upload = new uploadGambar;
-        // $upload->nama=$request->nama;
-        // $upload->file=$new_image;
-
-        // $image->move(public_path('dokumentasi'), $new_image);
-        // $galeri->save();
-
     }
 
     /**
@@ -105,6 +93,7 @@ class galeriController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'name' => 'required',
             'dokumentasi' => 'required',
             'keterangan' => 'required'
         ]);
@@ -117,18 +106,8 @@ class galeriController extends Controller
             $inputan = $request->all();
             $inputan['dokumentasi'] = $image;
             $itemgaleri->update($inputan);
-      // jika data berhasil diupdate, akan kembali ke halaman utama
+            
       return redirect('/admin/galeri')->with('success', 'Dokumentasi berhasil diupdate');
-
-        // galeri::update([
-        //     'dokumentasi' =>$image,
-        //     'keterangan'  =>$request->get('keterangan'),
-        // ]);
-        // $galeri->dokumentasi = $request->dokumentasi;
-        // $galeri->keterangan = $request->keterangan;
-        // $galeri->save();
-
-
     }
 
     /**

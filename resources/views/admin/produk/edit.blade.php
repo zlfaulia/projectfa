@@ -24,6 +24,11 @@
                 <form method="post" action="{{ url('/admin/produk/'.$item->id) }}" id="myForm" enctype="multipart/form-data">
                     @method('PUT')
                     @csrf
+                    <div class="form-group">
+                        <label for="name">Kode Produk</label>
+                        <input type="text" name="kode_produk" class="form-control" id="name"
+                            value="{{ $item->kode_produk }}" readonly="">
+                    </div>
                     <img src="{{asset('public/gambar_produk/'.$item->gambar_produk) }}" style="width:100px; height:100px;">
                     <div class="form-group">
                         <label for="name">Gambar Produk</label>
@@ -34,16 +39,6 @@
                         <label for="email">Nama Produk</label>
                         <input type="text" name="nama_produk" class="form-control" id="email"
                             value="{{ $item->nama_produk }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Harga Produk</label>
-                        <input type="text" name="harga_produk" class="form-control" id="name"
-                            value="{{ $item->harga_produk }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Stok Produk</label>
-                        <input type="text" name="stok_produk" class="form-control" id="email"
-                            value="{{ $item->stok_produk }}">
                     </div>
                     <div class="form-group">
                         <label for="name">Deskripsi Produk</label>

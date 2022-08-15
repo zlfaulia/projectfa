@@ -11,17 +11,16 @@
         </div>
     @endif
     <div class="float-right my-2">
-      <a class="btn btn-success" href="{{ url('/admin/produk/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Dokumentasi Baru</a>
+      <a class="btn btn-secondary" href="{{ url('/admin/produk/create') }}"><i class="fas fa-fw fa-plus"></i> Masukkan Produk Baru</a>
     </div>
     <table class="table table-striped teble-responsive">
       <thead>
         <tr>
             <th></th>
             <th>No</th>
+            <th>Kode Produk</th>
             <th>Gambar Produk</th>
             <th>Nama Produk</th>
-            <th>Harga Produk</th>
-            <th>Stok Produk</th>
             <th>Deskripsi Produk</th>
           </tr>
         </thead>
@@ -30,11 +29,10 @@
           <tr>
             <th scope="row"></th>
             <td>{{ $loop->iteration }}</td>
+            <td>{{ $produk->kode_produk}}</td>
             <td><img src="{{asset('public/gambar_produk/'.$produk->gambar_produk)}}" style="width: 60px;"></td>
             {{-- <td>{{ $produk->gambar_produk }}</td> --}}
             <td>{{ $produk->nama_produk}}</td>
-            <td>{{ $produk->harga_produk }}</td>
-            <td>{{ $produk->stok_produk}}</td>
             <td>{{ $produk->deskripsi_produk }}</td>
             <td class="text-center d-flex">
                 <a class="btn btn-info btn-sm mr-2" href="{{ route('produk.show',$produk->id) }}"><i class="fas fa-fw fa-eye"></i> Show</a>

@@ -11,6 +11,7 @@ class galeri extends Model
     use HasFactory;
 
     protected $fillable = [
+        'name',
         'dokumentasi',
         'keterangan',
     ];

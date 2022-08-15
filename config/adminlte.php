@@ -242,6 +242,11 @@ return [
             'url'  => '/admin/produk',
             'icon' => 'nav-icon fas fa-fw fa-tshirt',
         ],
+        [
+            'text' => 'Stok',
+            'url'  => '/admin/stok',
+            'icon' => 'nav-icon fas fa-fw fa-folder-plus',
+        ],
         ['header' => 'Transaksi'],
         [
             'text' => 'Pesanan',
@@ -250,7 +255,7 @@ return [
         ],
         [
             'text' => 'Custom Desain',
-            'url'  => '/customDesain',
+            'url'  => '/admin/customDesain',
             'icon' => 'nav-icon fas fa-fw fa-pen-nib',
         ],
         [
@@ -265,14 +270,25 @@ return [
         ],
         ['header' => 'Laporan'],
         [
-            'text' => 'Bahan Baku',
-            'url'  => '/bahanBaku',
+            'text' => 'Modal',
+            'url'  => '/admin/laporanModal',
             'icon' => 'nav-icon fas fa-fw fa-layer-group',
         ],
         [
-            'text' => 'Keuangan',
-            'url'  => '/keuangan',
+            'text' => 'Penjualan',
+            'url'  => '/penjualan',
             'icon' => 'nav-icon fas fa-fw fa-file-invoice-dollar',
+        ],
+        ['header' => 'Akun'],
+        [
+            'text' => 'User',
+            'url'  => '/admin/user',
+            'icon' => 'nav-icon fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Homepage',
+            'url'  => '/',
+            'icon' => 'nav-icon fas fa-fw fa-home',
         ],
     ],
     /*

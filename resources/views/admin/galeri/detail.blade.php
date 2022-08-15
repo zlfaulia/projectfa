@@ -11,6 +11,7 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     @foreach ($galeri as $item)
+                    <li class="list-group-item"><b>Nama: </b>{{$item->name}}</li>
                     <li class="list-group-item"><b>Dokumentasi: </b><img src="{{asset('public/dokumentasi/'.$item->dokumentasi) }}" style="width:100px; height:100px;"></li>
                     <li class="list-group-item"><b>Keterangan: </b>{{$item->keterangan}}</li>
                     @endforeach
