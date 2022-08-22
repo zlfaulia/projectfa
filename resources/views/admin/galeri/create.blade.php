@@ -29,8 +29,8 @@
                     <label>Keterangan</label>
                     <input type="text" name="keterangan" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-success" href="{{ url('/admin/galeri/') }}">Kembali</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

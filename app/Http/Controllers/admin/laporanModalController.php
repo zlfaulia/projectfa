@@ -28,7 +28,7 @@ class laporanModalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/laporanModal.create');
     }
 
     /**
@@ -39,7 +39,17 @@ class laporanModalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama_modal' => 'required',
+            'harga' => 'required',
+        ]);
+
+        laporanModal::create([
+            'nama_modal'  =>$request->get('nama_modal'),
+            'harga'  =>$request->get('harga'),
+        ]);
+        return redirect('/admin/laporanModal')->with('success', 'Modal berhasil ditambahkan');
+
     }
 
     /**
@@ -48,9 +58,10 @@ class laporanModalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(laporanModal $laporanModal)
     {
-        //
+        $laporanModal = laporanModal::find($laporanModal);
+        return view('admin/laporanModal.detail');
     }
 
     /**

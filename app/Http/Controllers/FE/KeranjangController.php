@@ -16,10 +16,11 @@ class KeranjangController extends Controller
      */
     public function index()
     {
-        $produk =produk::all();
-        $gambar_produk=produk::get()->groupBy('gambar_produk');
-        $stok=stok::all();
-        return view('FE/keranjang', compact('produk', 'stok', 'gambar_produk'));
+        // $produk =produk::all();
+        // $gambar_produk=produk::get()->groupBy('gambar_produk');
+        // $stok=stok::all();
+        // return view('FE/keranjang', compact('produk', 'stok', 'gambar_produk'));
+        return view('FE/keranjang');
     }
 
     // public function keranjang(Request $request)

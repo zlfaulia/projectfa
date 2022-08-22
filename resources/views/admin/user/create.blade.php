@@ -49,8 +49,8 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-success" href="{{ url('/admin/user/') }}">Kembali</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

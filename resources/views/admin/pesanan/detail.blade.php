@@ -11,7 +11,7 @@
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     @foreach ($pesanan as $item)
-                    <li class="list-group-item"><b>Nama Konsumen: </b>{{$item->user->nama}}</li>
+                    <li class="list-group-item"><b>Nama Konsumen: </b>{{$item->user->name}}</li>
                     <li class="list-group-item"><b>Alamat Pengiriman: </b>{{$item->user->alamat}}</li>
                     <li class="list-group-item"><b>Nama Produk: </b>{{$item->produk->nama_produk}}</li>
                     <li class="list-group-item"><b>Ukuran: </b>{{$item->stok->ukuran.'-'.$item->stok->variasi}}</li>

@@ -13,6 +13,8 @@ class stok extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'id';
+    protected $table = 'stoks';
     protected $fillable = [
         'produk_id',
         'harga_produk',
@@ -32,8 +34,8 @@ class stok extends Model
 
     public function pesanan()
     {
-        return $this->belongsTo(pesanan::class);
+        return $this->belongsTo(pesanan::class); //apakah ini relasi sudah jalan?
+        // return $this->belongsTo(pesanan::class, 'id'); // kurang lebih seperti ini
     }
-
 
 }

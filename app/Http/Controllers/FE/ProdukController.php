@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FE;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\produk;
 use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
@@ -18,7 +19,7 @@ class ProdukController extends Controller
         // $produks = DB::table('produks');
         // return view('FE.produk');
 
-        $produks = DB::table('produks')->get();
+        $produks = produk::orderBy('nama_produk','asc')->limit(10)->paginate(4);
         $data = array(
             'produks' => $produks,
         );

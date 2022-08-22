@@ -31,8 +31,8 @@
                     <label for="nama">Deskripsi Produk</label>
                     <input type="text" name="deskripsi_produk" class="form-control" id="name" >
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-success " href="{{ url('/admin/produk/') }}">Kembali</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

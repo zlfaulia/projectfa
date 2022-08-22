@@ -260,14 +260,14 @@ return [
         ],
         [
             'text' => 'Pembayaran',
-            'url'  => '/pembayaran',
+            'url'  => '/admin/pembayaran',
             'icon' => 'nav-icon fas fa-fw fa-dollar-sign',
         ],
-        [
-            'text' => 'Pengiriman',
-            'url'  => '/pengiriman',
-            'icon' => 'nav-icon fas fa-fw fa-truck',
-        ],
+        // [
+        //     'text' => 'Pengiriman',
+        //     'url'  => '/pengiriman',
+        //     'icon' => 'nav-icon fas fa-fw fa-truck',
+        // ],
         ['header' => 'Laporan'],
         [
             'text' => 'Modal',

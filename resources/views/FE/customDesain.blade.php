@@ -22,13 +22,6 @@
         <p>File berupa jpg,png,pdf atau yang disarankan berupa file (coreldraw/lainnya)</p>
     </div>
 
-
-    <div class="mb-3">
-        <label for="kategori" class="form-label">Pesan</label>
-        <input type="text" name="pesan" class="form-custom" id="name" placeholder="Catatan Pesanan">
-        <div id="kategori" class="form-text">contoh : kaos polos ukuran L(50) lengan panjang, M(50) lengan pendek</div>
-      </div>
-
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 

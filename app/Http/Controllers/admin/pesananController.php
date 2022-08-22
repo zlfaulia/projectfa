@@ -5,6 +5,9 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\produk;
+use App\Models\stok;
 use App\Models\Pesanan;
 
 class pesananController extends Controller
@@ -16,8 +19,10 @@ class pesananController extends Controller
      */
     public function index()
     {
-        $pesanans = DB::table('pesanans')->get();
+        $pesanans = pesanan::all();
         return view('admin/pesanan.pesanan',["title" => "Pesanan"], compact('pesanans'));
+
+
     }
 
     /**
@@ -27,7 +32,10 @@ class pesananController extends Controller
      */
     public function create()
     {
-        return view('admin/pesanan.create');
+        $user = User::all();
+        $produk= produk::all();
+        $stok= stok::all();
+        return view('admin/pesanan.create', compact('user', 'produk', 'stok'));
     }
 
     /**

@@ -54,8 +54,8 @@
                     <label for="nama">Tanggal Input</label>
                     <input type="date" name="tanggal_input" class="form-control" id="name" >
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
                 <a class="btn btn-success " href="{{ url('/admin/stok/') }}">Kembali</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>
         </div>

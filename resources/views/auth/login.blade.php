@@ -20,7 +20,7 @@
 <body class="login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><img src="https://i.ibb.co/cXrYVTD/logooo.png">
+    <a href="#"><img src="https://i.ibb.co/cXrYVTD/logooo.png">
     </a>
 
   </div>

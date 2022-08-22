@@ -5,6 +5,9 @@ namespace App\Http\Controllers\FE;
 use Illuminate\Http\Request;
 use App\Models\produk;
 use App\Models\stok;
+use App\Models\pesanan;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
 class detailProdukController extends Controller
@@ -26,13 +29,32 @@ class detailProdukController extends Controller
 
         // return response()->json($stok->harga_produk);
 
-        return view('FE/detailProduk', compact('stok','produk', 'harga', 'warna'));
+        return view('FE/detailProduk', compact('produk', 'stok', 'harga', 'warna'));
     }
 
-    //  public function pesan(Request $request)
+    //  public function pesan(Request $request, $id)
     // {
-    //     dd($request);
+    //     $produk =produk::where('id', $id)->first();
+    //     $stok=stok::find($id);
+    //     // $harga=stok::where('produk_id', $id)->get();
+    //     // $warna=stok::where('produk_id', $id)->get();
+    //     $tanggal = Carbon::now();
+
+    //     $pesanan = new pesanan;
+    //     $pesanan->user_id = Auth::user()->id;
+    //     $pesanan->produk_id = $produk->id;
+    //     $pesanan->stok_id = $stok->id;
+    //     $pesanan->tanggal_pesan = $tanggal;
+    //     $pesanan->jumlah = $request->jumlah_pesan;
+    //     $pesanan->catatan_pesanan=0;
+    //     $pesanan->opsi_pengiriman=0;
+
+    //     $pesanan->total_bayar = $produk->harga_produk * $request->jumlah_pesan;
+    //     $pesanan->save();
+
+    //     // dd($request);
     // }
+
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +74,7 @@ class detailProdukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -63,7 +85,10 @@ class detailProdukController extends Controller
      */
     public function show($id)
     {
-        //
+        $pesan = produk::find($id);
+        $beli = stok::findOrfail($id);
+        // $detailPesan = stok::find($id);
+        return view('FE/keranjangPesan', compact('pesan', 'beli'));
     }
 
     /**

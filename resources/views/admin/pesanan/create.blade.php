@@ -5,7 +5,6 @@
 
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
-            <a class="btn btn-success mt-3 mb-5" href="{{ url('/admin/pesanan/') }}">Kembali</a>
             <div class="card-header">
             Tambah Pesanan
             </div>
@@ -27,7 +26,7 @@
                     <select name="user_id" id="user_id" class="form-control">
                       <option value="">Nama Konsumen</option>
                       @foreach($user as $item)
-                      <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                      <option value="{{ $item->id }}">{{ $item->name }}</option>
                       @endforeach
                     </select>
                 </div>
@@ -50,20 +49,20 @@
                   </select>
                 </div>
                 <div class="form-group">
-                    <label for="produk_id">Harga Produk</label>
-                    <select name="produk_id" id="produk_id" class="form-control">
+                    <label for="stok_id">Harga Produk</label>
+                    <select name="stok_id" id="stok_id" class="form-control">
                       <option value="">Pilih Harga</option>
-                      @foreach($produk as $item)
-                      <option value="{{ $item->id }}">{{ $item->nama_produk}}</option>
+                      @foreach($stok as $item)
+                      <option value="{{ $item->id }}">{{ $item->harga_produk}}</option>
                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="produk_id">Warna Produk</label>
-                    <select name="produk_id" id="produk_id" class="form-control">
+                    <label for="stok_id">Warna Produk</label>
+                    <select name="stok_id" id="stok_id" class="form-control">
                       <option value="">Pilih Warna</option>
-                      @foreach($produk as $item)
-                      <option value="{{ $item->id }}">{{ $item->nama_produk}}</option>
+                      @foreach($stok as $item)
+                      <option value="{{ $item->id }}">{{ $item->warna}}</option>
                       @endforeach
                     </select>
                   </div>
@@ -96,7 +95,9 @@
                 <label for="nama">Opsi Pengiriman</label>
                 <input type="text" name="opsi_pengiriman" class="form-control" id="name" >
               </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <a class="btn btn-success" href="{{ url('/admin/pesanan/') }}">Kembali</a>
+              <button type="submit" class="btn btn-primary">Submit</button>
+
             </form>
             </div>
         </div>

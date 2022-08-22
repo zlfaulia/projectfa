@@ -51,7 +51,7 @@ class galeriController extends Controller
         galeri::create([
             'name'  =>$request->get('name'),
             'dokumentasi' =>$image,
-            'keterangan'  =>$request->get('keterangan'),
+             'keterangan'  =>$request->get('keterangan'),
         ]);
         return redirect('/admin/galeri')->with('success', 'Dokumentasi berhasil ditambahkan');
     }
@@ -106,7 +106,7 @@ class galeriController extends Controller
             $inputan = $request->all();
             $inputan['dokumentasi'] = $image;
             $itemgaleri->update($inputan);
-            
+
       return redirect('/admin/galeri')->with('success', 'Dokumentasi berhasil diupdate');
     }
 

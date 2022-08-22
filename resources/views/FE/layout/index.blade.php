@@ -3,108 +3,114 @@
 
 <head>
     <title>Dashboard</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--===============================================================================================-->
-  <link rel="icon" type="image/png" href="{{ asset('FE/images/icons/favicon.png') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/bootstrap/css/bootstrap.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset( 'FE/fonts/iconic/css/material-design-iconic-font.min.css')
-    }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/fonts/linearicons-v1.0.0/icon-font.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/animate/animate.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/css-hamburgers/hamburgers.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/animsition/css/animsition.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/select2/select2.min.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/daterangepicker/daterangepicker.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/slick/slick.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/MagnificPopup/magnific-popup.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" />
-  <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/css/util.css') }}" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('FE/css/main.css') }}" />
-  <!--===============================================================================================-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{{ asset('FE/images/icons/favicon.png') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('FE/fonts/iconic/css/material-design-iconic-font.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/fonts/linearicons-v1.0.0/icon-font.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/animate/animate.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/css-hamburgers/hamburgers.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/animsition/css/animsition.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/select2/select2.min.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/daterangepicker/daterangepicker.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/slick/slick.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/MagnificPopup/magnific-popup.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/vendor/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/css/util.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('FE/css/main.css') }}" />
+    <!--===============================================================================================-->
 </head>
 
 <body class="animsition">
-  <!-- Header -->
-  <header>
-    <!-- Header desktop -->
-    <div class="container-menu-desktop">
-      <div class="wrap-menu-desktop">
-        <nav class="limiter-menu-desktop container">
-          <!-- Logo desktop -->
-          <a class="logo">
-            <img src="{{ asset('FE/images/icons/logoo.jpg') }}" alt="IMG-LOGO" />
-            <h5>Nelba Konveksi</h5>
-          </a>
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <div class="wrap-menu-desktop">
+                <nav class="limiter-menu-desktop container">
+                    <!-- Logo desktop -->
+                    <a class="logo">
+                        <img src="{{ asset('FE/images/icons/logoo.jpg') }}" alt="IMG-LOGO" />
+                        <h5>Nelba Konveksi</h5>
+                    </a>
 
-          <!-- Menu desktop -->
-          <div class="menu-desktop">
-            <ul class="main-menu">
-                <li>
-                    <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
-                </li>
-                <li>
-                    <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}" href="{{ route('galeri') }}">{{ ('Galeri') }}</a>
-                </li>
+                    <!-- Menu desktop -->
+                    <div class="menu-desktop">
+                        <ul class="main-menu">
+                            <li>
+                                <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('dashboard') }}">Dashboard</a>
+                            </li>
+                            <li>
+                                <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('galeri') }}">{{ 'Galeri' }}</a>
+                            </li>
 
-              <li>
-                <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}" href="{{ route('produk') }}">Produk</a>
-              </li>
+                            <li>
+                                <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('produk') }}">Produk</a>
+                            </li>
 
-              <li>
-                <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}" href="{{ route('customDesain') }}">Custom Desain</a>
-              </li>
+                            <li>
+                                <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('customDesain') }}">Custom Desain</a>
+                            </li>
 
-              <li>
-                <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}" href="{{ route('keranjang') }}">Keranjang</a>
-              </li>
+                            <li>
+                                <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('keranjang') }}">Keranjang</a>
+                            </li>
 
-              <li>
-                <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}" href="{{ route('pembayaran') }}">Pembayaran</a>
-              </li>
-            </ul>
-          </div>
+                            <li>
+                                <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}"
+                                    href="{{ route('pembayaran') }}">Pembayaran</a>
+                            </li>
+                        </ul>
+                    </div>
 
-          <!-- Icon header -->
-          <div class="wrap-icon-header flex-w flex-r-m">
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-account">
-              <a href="{{ route('login') }}"><i class="zmdi zmdi-account-circle"></i></a>
-            </div>
+                    <!-- Icon header -->
+                    <div class="wrap-icon-header flex-w flex-r-m">
+                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-account">
+                            <a href="{{ route('login') }}"><i class="zmdi zmdi-account-circle"></i></a>
+                        </div>
 
-            {{-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                        {{-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
               data-notify="2">
               <i class="zmdi zmdi-shopping-cart"></i>
             </div> --}}
-          </div>
-        </nav>
-      </div>
-    </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
 
-    <!-- Header Mobile -->
-    <div class="wrap-header-mobile">
-      <!-- Logo moblie -->
-      <div class="logo-mobile">
-        <a href="index.html"><img src="{{ asset('FE/images/icons/logoo.jpg') }}" alt="IMG-LOGO" />
-          <h5>Nelba Konveksi</h5>
-        </a>
-      </div>
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a href="index.html"><img src="{{ asset('FE/images/icons/logoo.jpg') }}" alt="IMG-LOGO" />
+                    <h5>Nelba Konveksi</h5>
+                </a>
+            </div>
 
-      <!-- Icon header -->
-      {{-- <div class="wrap-icon-header flex-w flex-r-m m-r-15">
+            <!-- Icon header -->
+            {{-- <div class="wrap-icon-header flex-w flex-r-m m-r-15">
         <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-account">
           <i class="zmdi zmdi-search"></i>
         </div>
@@ -118,46 +124,52 @@
           </a>
       </div> --}}
 
-      <!-- Button show menu -->
-      <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </div>
-    </div>
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </div>
 
-    <!-- Menu Mobile -->
-    <div class="menu-mobile">
-      <ul class="main-menu-m">
-        <li>
-            <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
-        </li>
-        <li>
-            <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}" href="{{ route('galeri') }}">{{ ('Galeri') }}</a>
-        </li>
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul class="main-menu-m">
+                <li>
+                    <a class="nav-link {{ Request::is('/') ? 'btn btn-light' : '' }}"
+                        href="{{ route('dashboard') }}">Dashboard</a>
+                </li>
+                <li>
+                    <a class="nav-link {{ Request::is('galeri') ? 'btn btn-light' : '' }}"
+                        href="{{ route('galeri') }}">{{ 'Galeri' }}</a>
+                </li>
 
-        <li>
-            <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}" href="{{ route('produk') }}">Produk</a>
-          </li>
+                <li>
+                    <a class="nav-link {{ Request::is('produk') ? 'btn btn-light' : '' }}"
+                        href="{{ route('produk') }}">Produk</a>
+                </li>
 
-          <li>
-            <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}" href="{{ route('customDesain') }}">Custom Desain</a>
-          </li>
+                <li>
+                    <a class="nav-link {{ Request::is('customDesain') ? 'btn btn-light' : '' }}"
+                        href="{{ route('customDesain') }}">Custom Desain</a>
+                </li>
 
-          <li>
-            <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}" href="{{ route('keranjang') }}">Keranjang</a>
-          </li>
+                <li>
+                    <a class="nav-link {{ Request::is('keranjang') ? 'btn btn-light' : '' }}"
+                        href="{{ route('keranjang') }}">Keranjang</a>
+                </li>
 
-          <li>
-            <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}" href="{{ route('pembayaran') }}">Pembayaran</a>
-          </li>
-      </ul>
-    </div>
+                <li>
+                    <a class="nav-link {{ Request::is('pembayaran') ? 'btn btn-light' : '' }}"
+                        href="{{ route('pembayaran') }}">Pembayaran</a>
+                </li>
+            </ul>
+        </div>
 
-  </header>
+    </header>
 
-  <!-- Cart -->
-  {{-- <div class="wrap-header-cart js-panel-cart">
+    <!-- Cart -->
+    {{-- <div class="wrap-header-cart js-panel-cart">
     <div class="s-full js-hide-cart"></div>
 
     <div class="header-cart flex-col-l p-l-65 p-r-25">
@@ -223,103 +235,105 @@
     </div>
   </div> --}}
 
-  <!-- Slider -->
+    <!-- Slider -->
 
 
-  {{-- content --}}
-  @yield('content')
+    {{-- content --}}
+    @yield('content')
 
-  <!-- Banner -->
+    <!-- Banner -->
 
 
-  <!-- Footer -->
-  <footer class="bg3 p-t-75 p-b-32">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-6 col-lg-3 p-b-50">
-          <h4 class="stext-301 cl0 p-b-30">Categories</h4>
+    <!-- Footer -->
+    <footer class="bg3 p-t-75 p-b-32">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">Categories</h4>
 
-          <ul>
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kaos Polos </a>
-            </li>
+                    <ul>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kaos Polos </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kemeja Batik </a>
-            </li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Kemeja Batik </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Pakaian Dinas Harian(PDH) </a>
-            </li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Pakaian Dinas Harian(PDH) </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Baju Pabrik </a>
-            </li>
-          </ul>
-        </div>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Baju Pabrik </a>
+                        </li>
+                    </ul>
+                </div>
 
-        <div class="col-sm-6 col-lg-3 p-b-50">
-          <h4 class="stext-301 cl0 p-b-30">Help</h4>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">Help</h4>
 
-          <ul>
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Track Order </a>
-            </li>
+                    <ul>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Track Order </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Returns </a>
-            </li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Returns </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Shipping </a>
-            </li>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> Shipping </a>
+                        </li>
 
-            <li class="p-b-10">
-              <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> FAQs </a>
-            </li>
-          </ul>
-        </div>
+                        <li class="p-b-10">
+                            <a href="#" class="stext-107 cl7 hov-cl1 trans-04"> FAQs </a>
+                        </li>
+                    </ul>
+                </div>
 
-        <div class="col-sm-6 col-lg-3 p-b-50">
-          <h4 class="stext-301 cl0 p-b-30">GET IN TOUCH</h4>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">GET IN TOUCH</h4>
 
-          <p class="stext-107 cl7 size-201">Any questions? Let us know in store at 8th floor, 379 Hudson St, New York,
-            NY 10018 or call us on (+1) 96 716 6879</p>
+                    <p class="stext-107 cl7 size-201">Any questions? Let us know in store at 8th floor, 379 Hudson St,
+                        New York,
+                        NY 10018 or call us on (+1) 96 716 6879</p>
 
-          <div class="p-t-27">
-            <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-              <i class="fa fa-facebook"></i>
-            </a>
+                    <div class="p-t-27">
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-facebook"></i>
+                        </a>
 
-            <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-              <i class="fa fa-instagram"></i>
-            </a>
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-instagram"></i>
+                        </a>
 
-            <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-              <i class="fa fa-pinterest-p"></i>
-            </a>
-          </div>
-        </div>
+                        <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+                            <i class="fa fa-pinterest-p"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <div class="col-sm-6 col-lg-3 p-b-50">
-          <h4 class="stext-301 cl0 p-b-30">Newsletter</h4>
+                <div class="col-sm-6 col-lg-3 p-b-50">
+                    <h4 class="stext-301 cl0 p-b-30">Newsletter</h4>
 
-          <form>
-            <div class="wrap-input1 w-full p-b-4">
-              <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email"
-                placeholder="email@example.com" />
-              <div class="focus-input1 trans-04"></div>
+                    <form>
+                        <div class="wrap-input1 w-full p-b-4">
+                            <input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email"
+                                placeholder="email@example.com" />
+                            <div class="focus-input1 trans-04"></div>
+                        </div>
+
+                        <div class="p-t-18">
+                            <button
+                                class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <div class="p-t-18">
-              <button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">Subscribe</button>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="p-t-40">
-        {{-- <div class="flex-c-m flex-w p-b-18">
+            <div class="p-t-40">
+                {{-- <div class="flex-c-m flex-w p-b-18">
           <a href="#" class="m-all-1">
             <img src="{{ asset(" FE/") }}{{ asset('') }}images/icons/icon-pay-01.png" alt="ICON-PAY" />
           </a>
@@ -341,30 +355,30 @@
           </a>
         </div> --}}
 
-        <p class="stext-107 cl6 txt-center">
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          Copyright &copy;
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
-          All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-            href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a
-            href="https://themewagon.com" target="_blank">ThemeWagon</a>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </p>
-      </div>
+                <p class="stext-107 cl6 txt-center">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                        href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a
+                        href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="zmdi zmdi-chevron-up"></i>
+        </span>
     </div>
-  </footer>
 
-  <!-- Back to top -->
-  <div class="btn-back-to-top" id="myBtn">
-    <span class="symbol-btn-back-to-top">
-      <i class="zmdi zmdi-chevron-up"></i>
-    </span>
-  </div>
-
-  <!-- Modal1 -->
-  {{-- <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
+    <!-- Modal1 -->
+    {{-- <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
     <div class="overlay-modal1 js-hide-modal1"></div>
 
     <div class="container">
@@ -515,107 +529,107 @@
     </div>
   </div> --}}
 
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/animsition/js/animsition.min.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/bootstrap/js/popper.js') }}"></script>
-  <script src="{{ asset('FE/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/select2/select2.min.js') }}"></script>
-  <script>
-    $('.js-select2').each(function () {
-        $(this).select2({
-          minimumResultsForSearch: 20,
-          dropdownParent: $(this).next('.dropDownSelect2'),
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/animsition/js/animsition.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/bootstrap/js/popper.js') }}"></script>
+    <script src="{{ asset('FE/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/select2/select2.min.js') }}"></script>
+    <script>
+        $('.js-select2').each(function() {
+            $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2'),
+            });
         });
-      });
-  </script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/daterangepicker/moment.min.js') }}"></script>
-  <script src="{{ asset('FE/vendor/daterangepicker/daterangepicker.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/slick/slick.min.js') }}"></script>
-  <script src="{{ asset('FE/js/slick-custom.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/parallax100/parallax100.js') }}"></script>
-  <script>
-    $('.parallax100').parallax100();
-  </script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
-  <script>
-    $('.gallery-lb').each(function () {
-        // the containers for all your galleries
-        $(this).magnificPopup({
-          delegate: 'a', // the selector for gallery item
-          type: 'image',
-          gallery: {
-            enabled: true,
-          },
-          mainClass: 'mfp-fade',
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/daterangepicker/moment.min.js') }}"></script>
+    <script src="{{ asset('FE/vendor/daterangepicker/daterangepicker.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/slick/slick.min.js') }}"></script>
+    <script src="{{ asset('FE/js/slick-custom.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/parallax100/parallax100.js') }}"></script>
+    <script>
+        $('.parallax100').parallax100();
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/MagnificPopup/jquery.magnific-popup.min.js') }}"></script>
+    <script>
+        $('.gallery-lb').each(function() {
+            // the containers for all your galleries
+            $(this).magnificPopup({
+                delegate: 'a', // the selector for gallery item
+                type: 'image',
+                gallery: {
+                    enabled: true,
+                },
+                mainClass: 'mfp-fade',
+            });
         });
-      });
-  </script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/isotope/isotope.pkgd.min.js') }}"></script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/sweetalert/sweetalert.min.js') }}"></script>
-  <script>
-    $('.js-addwish-b2').on('click', function (e) {
-        e.preventDefault();
-      });
-
-      $('.js-addwish-b2').each(function () {
-        var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-        $(this).on('click', function () {
-          swal(nameProduct, 'is added to wishlist !', 'success');
-
-          $(this).addClass('js-addedwish-b2');
-          $(this).off('click');
-        });
-      });
-
-      $('.js-addwish-detail').each(function () {
-        var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-        $(this).on('click', function () {
-          swal(nameProduct, 'is added to wishlist !', 'success');
-
-          $(this).addClass('js-addedwish-detail');
-          $(this).off('click');
-        });
-      });
-
-      /*---------------------------------------------*/
-
-      $('.js-addcart-detail').each(function () {
-        var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-        $(this).on('click', function () {
-          swal(nameProduct, 'is added to cart !', 'success');
-        });
-      });
-  </script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
-  <script>
-    $('.js-pscroll').each(function () {
-        $(this).css('position', 'relative');
-        $(this).css('overflow', 'hidden');
-        var ps = new PerfectScrollbar(this, {
-          wheelSpeed: 1,
-          scrollingThreshold: 1000,
-          wheelPropagation: false,
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/isotope/isotope.pkgd.min.js') }}"></script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/sweetalert/sweetalert.min.js') }}"></script>
+    <script>
+        $('.js-addwish-b2').on('click', function(e) {
+            e.preventDefault();
         });
 
-        $(window).on('resize', function () {
-          ps.update();
+        $('.js-addwish-b2').each(function() {
+            var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+            $(this).on('click', function() {
+                swal(nameProduct, 'is added to wishlist !', 'success');
+
+                $(this).addClass('js-addedwish-b2');
+                $(this).off('click');
+            });
         });
-      });
-  </script>
-  <!--===============================================================================================-->
-  <script src="{{ asset('FE/js/main.js') }}"></script>
+
+        $('.js-addwish-detail').each(function() {
+            var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+            $(this).on('click', function() {
+                swal(nameProduct, 'is added to wishlist !', 'success');
+
+                $(this).addClass('js-addedwish-detail');
+                $(this).off('click');
+            });
+        });
+
+        /*---------------------------------------------*/
+
+        $('.js-addcart-detail').each(function() {
+            var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+            $(this).on('click', function() {
+                swal(nameProduct, 'is added to cart !', 'success');
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/vendor/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>
+    <script>
+        $('.js-pscroll').each(function() {
+            $(this).css('position', 'relative');
+            $(this).css('overflow', 'hidden');
+            var ps = new PerfectScrollbar(this, {
+                wheelSpeed: 1,
+                scrollingThreshold: 1000,
+                wheelPropagation: false,
+            });
+
+            $(window).on('resize', function() {
+                ps.update();
+            });
+        });
+    </script>
+    <!--===============================================================================================-->
+    <script src="{{ asset('FE/js/main.js') }}"></script>
 </body>
 
 </html>

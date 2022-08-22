@@ -854,10 +854,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     height: 350px;
 } */
 
-.register-logo {
+/* .register-logo {
     padding-bottom: 10px;
     padding-right: 150px;
-}
+} */
 
 /*//////////////////////////////////////////////////////////////////
 [ Sidebar ]*/
@@ -1091,6 +1091,17 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
     font-size: larger;
     font-weight: bold;
 }
+
+/*---------------------------------------------*/
+/* {Detail Pesan} */
+.control-label {
+    font-size: medium;
+    font-weight: bold;
+}
+
+/* .form-group {
+    font-size: medium;
+} */
 
 /*---------------------------------------------*/
 .header-cart-item-txt {

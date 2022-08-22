@@ -5,7 +5,6 @@
 
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
-            <a class="btn btn-success mt-3 mb-5" href="{{ url('/admin/customDesain/') }}">Kembali</a>
             <div class="card-header">
             Tambah Dokumentasi
             </div>
@@ -32,6 +31,7 @@
                     <label>Pesan</label>
                     <input type="text" name="pesan" class="form-control">
                 </div>
+                <a class="btn btn-success mt-3 mb-5" href="{{ url('/admin/customDesain/') }}">Kembali</a>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
             </div>

@@ -26,11 +26,11 @@
             @csrf
             <div class="form-group">
                 <label for="name">Nama Konsumen</label>
-                <input type="text" name="nama_konsumen" class="form-control" id="name" value="{{$item->nama_konsumen }}">
+                <input type="text" name="nama_konsumen" class="form-control" id="name" value="{{$item->name }}">
             </div>
             <div class="form-group">
                 <label for="email">Alamat Pengiriman</label>
-                <input type="text" name="alamat_pengiriman" class="form-control" id="email" value="{{$item->alamat_pengiriman }}">
+                <input type="text" name="alamat_pengiriman" class="form-control" id="email" value="{{$item->alamat}}">
             </div>
             <div class="form-group">
                 <label for="name">Nama Produk</label>

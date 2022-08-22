@@ -35,10 +35,11 @@
           <tr>
             <th scope="row"></th>
             <td>{{ $loop->iteration }}</td>
-            <td>{{$pesanan->user->nama}}</td>
-            <td>{{$pesanan->user->alamat}}</td>
+            <td>{{$pesanan->User->name}}</td>
+            <td>{{$pesanan->User->alamat}}</td>
             <td>{{$pesanan->produk->nama_produk}}</td>
             <td>{{$pesanan->stok->ukuran.'-'.$pesanan->stok->variasi}}</td>
+            <td>{{$pesanan->stok->harga_produk}}</td>
             <td>{{$pesanan->jumlah}}</td>
             <td>{{$pesanan->total_bayar}}</td>
             <td>{{$pesanan->tanggal_pesan}}</td>

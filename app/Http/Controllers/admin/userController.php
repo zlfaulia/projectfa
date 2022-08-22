@@ -43,10 +43,11 @@ class userController extends Controller
             'name'=>'string|required|max:30',
             'email'=>'string|required|unique:users',
             'password'=>'required|same:konfirm_password',
+            'no_telepon' => 'required',
             // 'password'=>'required',
             'role'=>'required|in:admin,konsumen',
-            'photo'=>'required',
-            'phone'=>'required|string',
+            'foto'=>'required|image|mimes:jpeg,png,jpg|max:10000',
+            // 'phone'=>'required|string',
             'alamat'=>'nullable|string',
         ]);
 

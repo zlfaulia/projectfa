@@ -6,16 +6,12 @@
 <section class="p-lr-15 p-tb-100">
     <form method="post" action="{{ url('/FE/pembayaran/') }}" id="myForm" enctype="multipart/form-data" >
     @csrf
-    {{-- <h3>pembayaran</h3>
-    <div class="form-group">
-        <label>Pilih Bahan:</label>
-
-      </div> --}}
     <div class="mb-3">
       <label for="kategori" class="form-pemb">Pilih Metode Pembayaran</label>
       <select class="form-select" >
         <option selected>-</option>
         <option value="1">Bayar DP</option>
+        <option value="1">Bayar Akhir</option>
         <option value="2">Cash</option>
       </select>
       {{-- <select class="form-control1" id="pilihan">
@@ -41,10 +37,14 @@
             {{-- <img src="public/FE/images/rek.png" alt="rekening" > --}}
 
     </div>
-
     <div class="mb-3">
+        <label for="kategori" class="form-pemb">Input Nominal Pembayaran</label>
+        <input type="text" name="inputan" class="form-custom" style="width: 240px" id="name" placeholder="masukkan nominal yang dibayar">
+      </div>
+
+    <div class="mb-3 p-t-10">
         <label for="kategori" class="form-pemb">Upload Bukti Pembayaran</label>
-        <input class="p-tb-5" name="desain" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+        <input class="p-tb-5 p-t-5" name="desain" type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
         <p>File berupa jpg dan png</p>
     </div>
 
