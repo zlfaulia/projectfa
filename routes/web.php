@@ -62,9 +62,9 @@ Route::middleware('admin')->group(function(){
     Route::resource('admin/user', 'App\Http\Controllers\admin\userController');
 });
 
-Route::middleware('konsumen')->group(function(){
+// Route::middleware('konsumen')->group(function(){
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-});
+// });
 // end penjual
 
 
@@ -75,10 +75,3 @@ Route::middleware('konsumen')->group(function(){
 //     Route::resource('/pesanan', 'App\Http\Controllers\admin\pesananController');
 
 // });
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
