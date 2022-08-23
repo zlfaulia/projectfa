@@ -51,13 +51,15 @@
                                 <i class="fa fa-fw fa-user text-lightblue"></i>
                                 Profile
                             </a>
-                            <a class="btn btn-default btn-flat float-right" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fa fa-fw fa-power-off text-red"></i>
-                                Log Out
-                            </a>
-                            <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
-                                <input type="hidden" name="_token" value="s909QQfPos2dLVQn4cxAzMyDxsGr2Fk40bF3v8JV" />
+                            <a class="btn btn-default btn-flat float-right" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                <i class="fa fa-fw fa-power-off text-red"></i> Logout</a>
+            
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
                             </form>
+
                         </li>
                     </ul>
                 </li>
@@ -65,7 +67,7 @@
         </nav>
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <a href="http://127.0.0.1:8000/home" class="brand-link">
+            <a href="{{url('home')}}" class="brand-link">
                 <img src="https://i.ibb.co/ZhNc6LG/logo-nelba.jpg" alt="AdminLTE" class="brand-image img-circle elevation-3" style="opacity: 0.8;" />
 
                 <span class="brand-text font-weight-light">
@@ -77,7 +79,7 @@
                 <nav class="pt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                         <li class="nav-item">
-                            <a class="nav-link active" href="http://127.0.0.1:8000/home">
+                            <a class="nav-link active" href="{{url('home')}}">
                                 <i class="nav-icon fas fa-fw fa-home"></i>
 
                                 <p>
@@ -88,7 +90,7 @@
 @if(Auth::user()->role == 'admin')
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/galeri">
+                            <a class="nav-link" href="{{url('/admin/galeri')}}">
                                 <i class="nav-icon fas fa-fw fa-image"></i>
 
                                 <p>
@@ -98,7 +100,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/produk">
+                            <a class="nav-link" href="{{url('/admin/produk')}}">
                                 <i class="nav-icon fas fa-fw fa-tshirt"></i>
 
                                 <p>
@@ -108,7 +110,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/stok">
+                            <a class="nav-link" href="{{url('/admin/stok')}}">
                                 <i class="nav-icon fas fa-fw fa-folder-plus"></i>
 
                                 <p>
@@ -122,7 +124,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/pesanan">
+                            <a class="nav-link" href="{{url('/admin/pesanan')}}">
                                 <i class="nav-icon fas fa-fw fa-cart-arrow-down"></i>
 
                                 <p>
@@ -132,7 +134,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/customDesain">
+                            <a class="nav-link" href="{{url('/admin/customDesain')}}">
                                 <i class="nav-icon fas fa-fw fa-pen-nib"></i>
 
                                 <p>
@@ -142,7 +144,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/pembayaran">
+                            <a class="nav-link" href="{{url('admin/pembayaran')}}">
                                 <i class="nav-icon fas fa-fw fa-dollar-sign"></i>
 
                                 <p>
@@ -156,7 +158,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/laporanModal">
+                            <a class="nav-link" href="{{url('/admin/laporanModal')}}">
                                 <i class="nav-icon fas fa-fw fa-layer-group"></i>
 
                                 <p>
@@ -166,7 +168,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/penjualan">
+                            <a class="nav-link" href="{{url('/penjualan')}}">
                                 <i class="nav-icon fas fa-fw fa-file-invoice-dollar"></i>
 
                                 <p>
@@ -180,7 +182,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/user">
+                            <a class="nav-link" href="{{url('/admin/user')}}">
                                 <i class="nav-icon fas fa-fw fa-user"></i>
 
                                 <p>
@@ -189,7 +191,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000">
+                            <a class="nav-link" href="{{url('/')}}">
                                 <i class="nav-icon fas fa-fw fa-home"></i>
                                 
                                 <p>
