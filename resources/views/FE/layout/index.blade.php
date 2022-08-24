@@ -87,9 +87,16 @@
 
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-account">
+                      
+                      <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-account">
+                          {{-- @if(Auth::user()->role == 'admin')
                             <a href="{{ route('login') }}"><i class="zmdi zmdi-account-circle"></i></a>
+                          @endif  --}}
+                          {{-- @if(Auth::user()->role == 'komsumen') --}}
+                          <a href="{{ route('login') }}"><i class="zmdi zmdi-account-circle"></i></a>
+                          {{-- @endif --}}
                         </div>
+                    
 
                         {{-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
               data-notify="2">
