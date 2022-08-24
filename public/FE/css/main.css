@@ -1075,7 +1075,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 .form-custom {
     /* border-radius: 5%; */
     border: 1px solid black;
-    width: 200px;
+    width: 300px;
     height: 40px;
     background-color: transparent;
 }

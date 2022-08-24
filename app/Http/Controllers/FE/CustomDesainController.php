@@ -40,7 +40,7 @@ class CustomDesainController extends Controller
             'kategori' => 'required',
             'bahan' => 'required',
             'desain' => 'required',
-            'pesan' => 'required'
+            'cat_pesan' => 'required'
         ]);
 
         // $image = $request->file('dokumentasi')->getClientOriginalName();
@@ -50,7 +50,7 @@ class CustomDesainController extends Controller
             'kategori' =>$request->get('kategori'),
             'bahan' =>$request->get('bahan'),
             'desain' =>$request->get('desain'),
-            'pesan' =>$request->get('pesan'),
+            'cat_pesan' =>$request->get('pesan'),
         ]);
         return redirect('/FE/customDesain')->with('success', 'Dokumentasi berhasil ditambahkan');
     }

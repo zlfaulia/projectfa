@@ -1,19 +1,20 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shop | Dashboard</title>
-  <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" />
-  <link rel="stylesheet" href="{{asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css')}}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop | Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}" />
 
-  <link rel="stylesheet" href="{{asset('vendor/adminlte/dist/css/adminlte.min.css')}}" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/adminlte.min.css') }}" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic" />
 
-  <link rel="stylesheet" href="{{asset('css/admin_custom.css')}}" />
+    <link rel="stylesheet" href="{{ asset('css/admin_custom.css') }}" />
 
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
 </head>
 
 <body class="sidebar-mini">
@@ -31,7 +32,8 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="https://picsum.photos/300/300" class="user-image img-circle elevation-2" alt="hallo" />
+                        <img src="https://picsum.photos/300/300" class="user-image img-circle elevation-2"
+                            alt="hallo" />
                         <span class="d-none d-md-inline">
                             hallo
                         </span>
@@ -40,10 +42,10 @@
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <li class="user-header bg-primary">
                             <img src="https://picsum.photos/300/300" class="img-circle elevation-2" alt="hallo" />
-                            <p class="">
+                            {{-- <p class="">
                                 hallo
                                 <small>That&#039;s a nice guy</small>
-                            </p>
+                            </p> --}}
                         </li>
 
                         <li class="user-footer">
@@ -51,11 +53,13 @@
                                 <i class="fa fa-fw fa-user text-lightblue"></i>
                                 Profile
                             </a>
-                            <a class="btn btn-default btn-flat float-right" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            <a class="btn btn-default btn-flat float-right" href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 <i class="fa fa-fw fa-power-off text-red"></i>
                                 Log Out
                             </a>
-                            <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
+                            <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST"
+                                style="display: none;">
                                 <input type="hidden" name="_token" value="s909QQfPos2dLVQn4cxAzMyDxsGr2Fk40bF3v8JV" />
                             </form>
                         </li>
@@ -66,7 +70,8 @@
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="http://127.0.0.1:8000/home" class="brand-link">
-                <img src="https://i.ibb.co/ZhNc6LG/logo-nelba.jpg" alt="AdminLTE" class="brand-image img-circle elevation-3" style="opacity: 0.8;" />
+                <img src="https://i.ibb.co/ZhNc6LG/logo-nelba.jpg" alt="logo konveksi"
+                    class="brand-image img-circle elevation-3" style="opacity: 0.8;" />
 
                 <span class="brand-text font-weight-light">
                     <b>Nelba Konveksi</b>
@@ -85,118 +90,117 @@
                                 </p>
                             </a>
                         </li>
-@if(Auth::user()->role == 'admin')
+                        @if (Auth::user()->role == 'admin')
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/galeri">
+                                    <i class="nav-icon fas fa-fw fa-image"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/galeri">
-                                <i class="nav-icon fas fa-fw fa-image"></i>
+                                    <p>
+                                        Galeri
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Galeri1
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/produk">
+                                    <i class="nav-icon fas fa-fw fa-tshirt"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/produk">
-                                <i class="nav-icon fas fa-fw fa-tshirt"></i>
+                                    <p>
+                                        Produk
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Produk
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/stok">
+                                    <i class="nav-icon fas fa-fw fa-folder-plus"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/stok">
-                                <i class="nav-icon fas fa-fw fa-folder-plus"></i>
+                                    <p>
+                                        Stok
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Stok
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-header">
+                                Transaksi
+                            </li>
 
-                        <li class="nav-header">
-                            Transaksi
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/pesanan">
+                                    <i class="nav-icon fas fa-fw fa-cart-arrow-down"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/pesanan">
-                                <i class="nav-icon fas fa-fw fa-cart-arrow-down"></i>
+                                    <p>
+                                        Pesanan
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Pesanan
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/customDesain">
+                                    <i class="nav-icon fas fa-fw fa-pen-nib"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/customDesain">
-                                <i class="nav-icon fas fa-fw fa-pen-nib"></i>
+                                    <p>
+                                        Custom Desain
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Custom Desain
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/pembayaran">
+                                    <i class="nav-icon fas fa-fw fa-dollar-sign"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/pembayaran">
-                                <i class="nav-icon fas fa-fw fa-dollar-sign"></i>
+                                    <p>
+                                        Pembayaran
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Pembayaran
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-header">
+                                Laporan
+                            </li>
 
-                        <li class="nav-header">
-                            Laporan
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/laporanModal">
+                                    <i class="nav-icon fas fa-fw fa-layer-group"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/laporanModal">
-                                <i class="nav-icon fas fa-fw fa-layer-group"></i>
+                                    <p>
+                                        Modal
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Modal
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/penjualan">
+                                    <i class="nav-icon fas fa-fw fa-file-invoice-dollar"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/penjualan">
-                                <i class="nav-icon fas fa-fw fa-file-invoice-dollar"></i>
+                                    <p>
+                                        Penjualan
+                                    </p>
+                                </a>
+                            </li>
 
-                                <p>
-                                    Penjualan
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-header">
+                                Akun
+                            </li>
 
-                        <li class="nav-header">
-                            Akun
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000/admin/user">
+                                    <i class="nav-icon fas fa-fw fa-user"></i>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000/admin/user">
-                                <i class="nav-icon fas fa-fw fa-user"></i>
+                                    <p>
+                                        User
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:8000">
+                                    <i class="nav-icon fas fa-fw fa-home"></i>
 
-                                <p>
-                                    User
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://127.0.0.1:8000">
-                                <i class="nav-icon fas fa-fw fa-home"></i>
-                                
-                                <p>
-                                    Homepage
-                                </p>
-                            </a>
-                        </li>
+                                    <p>
+                                        Homepage
+                                    </p>
+                                </a>
+                            </li>
                         @endif
                     </ul>
                 </nav>
@@ -208,14 +212,15 @@
         </div>
     </div>
 
-    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 
-    <script src="{{asset('vendor/adminlte/dist/js/adminlte.min.js')}}"></script>
+    <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
 
     <script>
         console.log("Hi!");
     </script>
 </body>
+
 </html>

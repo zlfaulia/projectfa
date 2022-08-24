@@ -20,7 +20,6 @@ class KeranjangPesanController extends Controller
     public function index($id)
     {
 
-        // return json_encode(request()->get('stok_id'));
         $produk =produk::where('id', $id)->first();
         $pesan = produk::find($id);
         $jumlah = request()->get('jumlah_pesan'); // ambil get dari url parameter (?jumlah_pesanan=3)

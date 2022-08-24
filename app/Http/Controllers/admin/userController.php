@@ -43,12 +43,12 @@ class userController extends Controller
             'name'=>'string|required|max:30',
             'email'=>'string|required|unique:users',
             'password'=>'required|same:konfirm_password',
-            'no_telepon' => 'required',
+            'no_telepon' => 'nullable|string',
             // 'password'=>'required',
-            'role'=>'required|in:admin,konsumen',
-            'foto'=>'required|image|mimes:jpeg,png,jpg|max:10000',
-            // 'phone'=>'required|string',
             'alamat'=>'nullable|string',
+            'foto'=>'nullable',
+            'role'=>'required|in:admin,konsumen',
+
         ]);
 
         $image = $request->file('foto')->getClientOriginalName();
@@ -59,10 +59,10 @@ class userController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
-        $user->role=$request->role;
-        $user->foto=$image;
         $user->no_telepon=$request->no_telepon;
         $user->alamat=$request->alamat;
+        $user->foto=$image;
+        $user->role=$request->role;
         $user->save();
         return redirect('/admin/user')->with('success', 'Data user berhasil ditambahkan');
     }
@@ -107,10 +107,10 @@ class userController extends Controller
             'email'=>'string',
             'password'=>'required|same:konfirm_password',
             // 'password'=>'required|',
-            'role'=>'required|in:admin,konsumen',
             'no_telepon'=>'required|string',
             'alamat'=>'nullable|string',
             'foto'=>'nullable',
+            'role'=>'required|in:admin,konsumen',
         ]);
 
         $image = $request->file('foto')->getClientOriginalName();
